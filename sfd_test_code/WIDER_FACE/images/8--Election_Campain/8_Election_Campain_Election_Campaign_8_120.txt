@@ -1,0 +1,3 @@
+8_Election_Campain_Election_Campaign_8_120
+1
+213 109 550 640 0.9994088411331177

@@ -1,0 +1,3 @@
+2_Demonstration_Political_Rally_2_896
+1
+295 288 83 101 0.9837979674339294

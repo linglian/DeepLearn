@@ -1,0 +1,4 @@
+48_Parachutist_Paratrooper_Parachutist_Paratrooper_48_678
+2
+330 321 48 73 0.9978615641593933
+646 306 61 75 0.9582059383392334

@@ -1,0 +1,3 @@
+32_Worker_Laborer_Worker_Laborer_32_262
+1
+400 408 146 197 0.993953287601471
