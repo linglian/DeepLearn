@@ -4,11 +4,10 @@ import scipy.io as sio
 
 
 # Make sure that caffe is on the python path:
-caffe_root = '/Users/lol/DeepLearn/caffe/'  # this file is expected to be in {caffe_root}/sfd_test_code
+caffe_root = '/usr/local/caffe/'  # this file is expected to be in {caffe_root}/sfd_test_code
 import os
 os.chdir(caffe_root)
 import sys
-sys.path.insert(0, 'python')
 import caffe
 
 
@@ -130,21 +129,21 @@ def write_to_txt(f, det):
 
 def testFunction():
     caffe.set_mode_cpu()
-    model_def = '/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/models/VGGNet/WIDER_FACE/SFD_trained/deploy.prototxt'
-    model_weights = '/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/models/VGGNet/WIDER_FACE/SFD_trained/SFD.caffemodel'
+    model_def = '/home/lee/DeepLearn/sfd_test_code/WIDER_FACE/models/VGGNet/WIDER_FACE/SFD_trained/deploy.prototxt'
+    model_weights = '/home/lee/DeepLearn/sfd_test_code/WIDER_FACE/models/VGGNet/WIDER_FACE/SFD_trained/SFD.caffemodel'
     net = caffe.Net(model_def, model_weights, caffe.TEST)
 
     subset = 'val' # val or test
     if subset is 'val':
-        wider_face = sio.loadmat('/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/wider_face_val.mat')    # Val set
+        wider_face = sio.loadmat('/home/lee/DeepLearn/sfd_test_code/WIDER_FACE/wider_face_val.mat')    # Val set
     else:
-        wider_face = sio.loadmat('/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/wider_face_test.mat')   # Test set
+        wider_face = sio.loadmat('/home/lee/DeepLearn/sfd_test_code/WIDER_FACE/wider_face_test.mat')   # Test set
     event_list = wider_face['event_list']
     file_list = wider_face['file_list']
     del wider_face
 
-    Path = '/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/images/'
-    save_path = '/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/eval_tools_old-version/sfd' + '_' + subset + '/'
+    Path = '/home/lee/DeepLearn/sfd_test_code/WIDER_FACE/images/'
+    save_path = '/home/lee/DeepLearn/sfd_test_code/WIDER_FACE/eval_tools_old-version/sfd' + '_' + subset + '/'
     for index, event in enumerate(event_list):
         dirName = event[0][0].encode('utf-8')
         filelist = file_list[index][0]
@@ -181,6 +180,7 @@ def drawBoxes(im, boxes, colorR=0, colorG=255, colorB=0):
     for i in range(x1.shape[0]):
         cv2.rectangle(im, (int(x1[i]), int(y1[i])), (int(x2[i]), int(y2[i])), (colorR, colorG, colorB), 1)
     return im
+
 def testPicture(imgPath):
     import cv2
     caffe.set_mode_cpu()
@@ -207,4 +207,4 @@ def testPicture(imgPath):
     ch = cv2.waitKey(0) & 0xFF
 
 if __name__ == '__main__':
-    testPicture('/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/test2.jpg')
+    testFunction('/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/test2.jpg')
