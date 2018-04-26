@@ -4,7 +4,7 @@ import scipy.io as sio
 
 
 # Make sure that caffe is on the python path:
-caffe_root = '/usr/local/caffe/'  # this file is expected to be in {caffe_root}/sfd_test_code
+caffe_root = '/home/lee/caffe/'  # this file is expected to be in {caffe_root}/sfd_test_code
 import os
 os.chdir(caffe_root)
 import sys
