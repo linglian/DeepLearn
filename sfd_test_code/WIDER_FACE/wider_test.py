@@ -208,4 +208,4 @@ def testPicture(imgPath):
     ch = cv2.waitKey(0) & 0xFF
 
 if __name__ == '__main__':
-    testFunction('/Users/lol/DeepLearn/SFD/sfd_test_code/WIDER_FACE/test2.jpg')
+    testFunction()
