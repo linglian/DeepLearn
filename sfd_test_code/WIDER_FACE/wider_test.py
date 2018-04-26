@@ -8,7 +8,7 @@ caffe_root = '/usr/local/caffe/'  # this file is expected to be in {caffe_root}/
 import os
 os.chdir(caffe_root)
 import sys
-sys.path.insert(0, caffe_root)
+sys.path.insert(0, caffe_root + '/python')
 import caffe
 
 
